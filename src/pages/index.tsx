@@ -1,11 +1,12 @@
 import Head from "next/head";
+import Layout from "../components/layout";
 import { Inter } from "@next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <>
+    <Layout>
       <Head>
         <title>윤태연 포트폴리오</title>
         <meta name="description" content="개발에 재미를 찾은 개발자" />
@@ -17,6 +18,6 @@ export default function Home() {
         윤태연
         <br /> 웹 개발 포트폴리오
       </h1>
-    </>
+    </Layout>
   );
 }
