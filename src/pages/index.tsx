@@ -14,7 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1 className={inter.className}>
+      <h1 className={`${inter.className} text-3xl font-bold underline`}>
         윤태연
         <br /> 웹 개발 포트폴리오
       </h1>
