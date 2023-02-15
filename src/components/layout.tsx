@@ -1,7 +1,7 @@
 import Header from "./Header";
 import Footer from "./Footer";
 
-export default function layout({ children }: React.PropsWithChildren<{}>) {
+export default function Layout({ children }: React.PropsWithChildren<{}>) {
   return (
     <>
       <Header />

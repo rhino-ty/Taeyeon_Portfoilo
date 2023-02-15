@@ -1,7 +1,9 @@
+import Layout from "@/components/Layout";
+
 export default function projects() {
   return (
-    <div>
+    <Layout>
       <h1>프로젝트</h1>
-    </div>
+    </Layout>
   );
 }
