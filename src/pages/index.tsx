@@ -15,7 +15,7 @@ export default function Home() {
 
       <section className="flex min-h-screen flex-col items-center justify-center text-gray-600 body-font relative">
         <div className="container mx-auto flex px-5 py-24 lg:flex-row flex-col items-center">
-          <div className="lg:max-w-lg lg:w-full md:w-3/4 w-5/6 mb-10 md:mb-0">
+          <div className="lg:max-w-lg lg:w-full md:w-3/4 mb-10 md:mb-0">
             <Animaition />
           </div>
           <HomeHero />

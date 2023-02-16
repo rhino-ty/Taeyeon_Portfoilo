@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <header className="text-gray-600 body-font md:sticky md:top-0 md:z-50 bg-white">
+    <header className="text-gray-600 body-font md:sticky md:top-0 md:z-50 md:bg-white">
       <div className="container mx-auto flex flex-wrap px-5 py-4 flex-col md:flex-row items-center">
         <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0 cursor-pointer">
           <svg
