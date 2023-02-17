@@ -12,7 +12,12 @@ export default function Footer() {
             <span className="ml-3 text-xl">윤태연 포트폴리오</span>
           </Link>
           <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-            <a href="https://velog.io/@okko8522" className="ml-3 text-gray-500 cursor-pointer">
+            <a
+              href="https://velog.io/@okko8522"
+              target="_blank"
+              rel="noreferrer"
+              className="ml-3 text-gray-500 cursor-pointer"
+            >
               <svg
                 className="icon"
                 xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +36,12 @@ export default function Footer() {
                 />
               </svg>
             </a>
-            <a href="https://github.com/rhino-ty" className="ml-4 text-gray-500 cursor-pointer">
+            <a
+              href="https://github.com/rhino-ty"
+              target="_blank"
+              rel="noreferrer"
+              className="ml-4 text-gray-500 cursor-pointer"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 version="1.1"

@@ -31,6 +31,8 @@ export default function Header() {
           </Link>
           <a
             href="https://rhino-ty.notion.site/bf42f94b655b4f70a50abda612f58f40"
+            target="_blank"
+            rel="noreferrer"
             className="mr-5 hover:text-gray-900 cursor-pointer"
           >
             Resume
