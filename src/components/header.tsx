@@ -29,7 +29,10 @@ export default function Header() {
           <Link href="/projects" className="mr-5 hover:text-gray-900 cursor-pointer">
             Projects
           </Link>
-          <a href="" className="mr-5 hover:text-gray-900 cursor-pointer">
+          <a
+            href="https://rhino-ty.notion.site/bf42f94b655b4f70a50abda612f58f40"
+            className="mr-5 hover:text-gray-900 cursor-pointer"
+          >
             Resume
           </a>
           <Link href="/about" className="mr-0 md:mr-5 hover:text-gray-900 cursor-pointer">
