@@ -1,4 +1,5 @@
 import { Inter } from "@next/font/google";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -48,9 +49,12 @@ export default function HomeHero() {
           </p>
         </div>
         <div className="flex justify-center">
-          <button className="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">
+          <Link
+            href="/projects"
+            className="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg"
+          >
             프로젝트 보러가기
-          </button>
+          </Link>
         </div>
       </div>
     </>
