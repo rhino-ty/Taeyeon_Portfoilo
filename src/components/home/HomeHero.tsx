@@ -33,7 +33,6 @@ export default function HomeHero() {
             경험이 중요하고, 복기를 통해 다음 문제의 해결 단서가 되기에 부트캠프에서 경험한 것들은
             전부 기록하였고, 프로젝트에서 작성글을 팀원에게 공유하고 해결한 적이 있습니다.
           </p>
-          <br />
           <h2 className="text-gray-900 text-lg title-font font-medium mt-4">
             모름을 알고 넓은 시야를 가지고 싶은 개발자
           </h2>
