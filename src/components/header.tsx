@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Header() {
   return (
     <header className="text-gray-600 body-font md:sticky md:top-0 md:z-50 md:bg-white">
@@ -19,7 +21,9 @@ export default function Header() {
         </a>
         <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
           <a className="mr-5 hover:text-gray-900 cursor-pointer">Home</a>
-          <a className="mr-0 md:mr-5 hover:text-gray-900 cursor-pointer">Projects</a>
+          <Link href="/projects" className="mr-0 md:mr-5 hover:text-gray-900 cursor-pointer">
+            Projects
+          </Link>
         </nav>
         <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
           Button
