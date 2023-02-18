@@ -49,10 +49,7 @@ export default function HomeHero() {
           </p>
         </div>
         <div className="flex justify-center">
-          <Link
-            href="/projects"
-            className="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg"
-          >
+          <Link href="/projects" className="btn-project">
             프로젝트 보러가기
           </Link>
         </div>
