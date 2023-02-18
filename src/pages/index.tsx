@@ -13,7 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <section className="flex min-h-screen flex-col items-center justify-center text-gray-600 body-font relative">
+      <section className="flex min-h-screen flex-col items-center justify-center text-gray-600 body-font relative bg-primary">
         <div className="container mx-auto flex px-5 py-12 lg:flex-row flex-col items-center">
           <div className="lg:max-w-lg lg:w-full md:w-3/4 mb-10 md:mb-0">
             <Animaition />

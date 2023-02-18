@@ -3,7 +3,7 @@ import DarkModeToggleButton from "./DarkModeToggleButton";
 
 export default function Header() {
   return (
-    <header className="text-gray-600 body-font md:sticky md:top-0 md:z-50 md:bg-white">
+    <header className="text-gray-600 body-font md:sticky md:top-0 md:z-50 bg-primary">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <Link
           href="/"
