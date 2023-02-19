@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import DarkModeToggleButton from "./DarkModeToggleButton";
-import rhino from "../../public/Rhino.jpeg";
+import rhino from "../../public/Rhino.jpg";
 
 export default function Header() {
   return (
