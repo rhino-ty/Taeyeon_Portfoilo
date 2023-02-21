@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import Head from "next/head";
 import axios from "axios";
+import { DATABASE_ID, TOKEN } from "../../config/index";
 
 export default function projects() {
   return (
