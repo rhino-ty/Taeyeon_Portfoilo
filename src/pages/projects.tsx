@@ -15,3 +15,10 @@ export default function projects() {
     </Layout>
   );
 }
+
+export async function getStaticProps() {
+  return {
+    props: {},
+    revalidate: 1,
+  };
+}
