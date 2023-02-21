@@ -22,24 +22,19 @@ export default function projects() {
 export async function getStaticProps() {
   const options = {
     method: "POST",
-    url: "https://api.notion.com/v1/databases/database_id/query",
+    url: `https://api.notion.com/v1/databases/${DATABASE_ID}/query`,
     headers: {
       accept: "application/json",
       "Notion-Version": "2022-02-22",
       "content-type": "application/json",
-      Authorization: "Bearer ",
+      Authorization: `Bearer ${TOKEN}`,
     },
     data: { page_size: 100 },
   };
 
-  axios
-    .request(options)
-    .then(function (response) {
-      console.log(response.data);
-    })
-    .catch(function (error) {
-      console.error(error);
-    });
+  const response = await axios.request(options);
+  console.log(response);
+
   return {
     props: {},
     revalidate: 1,
