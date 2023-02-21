@@ -3,6 +3,71 @@ import Head from "next/head";
 import axios from "axios";
 import { DATABASE_ID, TOKEN } from "../../config/index";
 
+interface Project {
+  id: string;
+  created_time: string;
+  last_edited_time: string;
+  created_by: {
+    object: string;
+    id: string;
+  };
+  last_edited_by: {
+    object: string;
+    id: string;
+  };
+  cover: {
+    type: string;
+    external?: {
+      url: string;
+    };
+    file?: {
+      url: string;
+    };
+  };
+  icon: string | null;
+  parent: {
+    type: string;
+    database_id: string;
+  };
+  archived: boolean;
+  properties: {
+    description: {
+      title: string;
+      text: {
+        content: string;
+      }[];
+    };
+    Github: {
+      title: string;
+      url: string;
+    };
+    "Operation Date": {
+      title: string;
+      date: {
+        start: string;
+        end?: string;
+      };
+    };
+    Velog: {
+      title: string;
+      url: string;
+    };
+    tag: {
+      title: string;
+      multi_select: {
+        name: string;
+      }[];
+    };
+    name: {
+      title: string;
+      rich_text: {
+        content: string;
+      }[];
+    };
+  };
+  url: string;
+}
+
 export default function projects() {
   return (
     <Layout>
@@ -33,7 +98,9 @@ export async function getStaticProps() {
   };
 
   const response = await axios.request(options);
-  console.log(response);
+  console.log(response.data.results);
+  const projects = response.data.results;
+  const projectIds = projects.map((aProject: Project) => aProject.id);
 
   return {
     props: {},
