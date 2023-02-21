@@ -22,6 +22,7 @@ interface Project {
     };
     file?: {
       url: string;
+      expiry_time: string;
     };
   };
   icon: string | null;
@@ -31,44 +32,82 @@ interface Project {
   };
   archived: boolean;
   properties: {
-    description: {
-      title: string;
-      text: {
-        content: string;
-      }[];
-    };
-    Github: {
+    설명: {
+      id: string;
+      type: string;
+      rich_text: {
+        type: string;
+        text: {
+          content: string;
+          link: string | null;
+        };
+        annotations: {
+          bold: boolean;
+          italic: boolean;
+          strikethrough: boolean;
+          underline: boolean;
+          code: boolean;
+          color: string;
+        };
+        plain_text: string;
+        href: string | null;
+      };
+    }[];
+    github: {
+      id: string;
       title: string;
       url: string;
     };
-    "Operation Date": {
-      title: string;
+    작업일자: {
+      id: string;
+      type: string;
       date: {
         start: string;
         end?: string;
       };
     };
-    Velog: {
-      title: string;
+    velog: {
+      id: string;
+      type: string;
       url: string;
     };
-    tag: {
-      title: string;
+    태그: {
+      id: string;
+      type: string;
       multi_select: {
+        id: string;
         name: string;
+        color: string;
       }[];
     };
-    name: {
-      title: string;
-      rich_text: {
-        content: string;
+    이름: {
+      id: string;
+      type: string;
+      title: {
+        type: string;
+        text: {
+          content: string;
+          link: string | null;
+        };
+        annotations: {
+          bold: boolean;
+          italic: boolean;
+          strikethrough: boolean;
+          underline: boolean;
+          code: boolean;
+          color: string;
+        };
+        plain_text: string;
+        href: string | null;
       }[];
     };
   };
   url: string;
 }
 
-export default function projects() {
+export default function projects(projectName: string[]) {
+  console.log(projectName);
+
   return (
     <Layout>
       <Head>
@@ -94,16 +133,26 @@ export async function getStaticProps() {
       "content-type": "application/json",
       Authorization: `Bearer ${TOKEN}`,
     },
-    data: { page_size: 100 },
+    data: {
+      page_size: 100,
+      sorts: [
+        {
+          property: "이름",
+          direction: "ascending",
+        },
+      ],
+    },
   };
 
   const response = await axios.request(options);
-  console.log(response.data.results);
   const projects = response.data.results;
-  const projectIds = projects.map((aProject: Project) => aProject.id);
+
+  const projectName = projects.map(
+    (aProject: Project) => aProject.properties.이름.title[0].plain_text
+  );
 
   return {
-    props: {},
+    props: { projectName },
     revalidate: 1,
   };
 }
