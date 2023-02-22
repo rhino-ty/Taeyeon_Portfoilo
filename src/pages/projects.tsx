@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import Head from "next/head";
+import { useEffect, useState } from "react";
 // import axios from "axios";
 import { DATABASE_ID, TOKEN } from "../../config";
 import ProjectItem from "../components/projects/ProjectItem";
@@ -9,7 +10,13 @@ interface ProjectsProps {
   projects: Project[];
 }
 
-export default function projects({ projects }: ProjectsProps) {
+export default function Projects({ projects }: ProjectsProps) {
+  const [projectList, setProjectList] = useState<Project[]>([]);
+
+  useEffect(() => {
+    setProjectList(projects);
+  }, [projects]);
+
   return (
     <Layout>
       <Head>
@@ -20,10 +27,10 @@ export default function projects({ projects }: ProjectsProps) {
       </Head>
       <div className="flex flex-col items-center justify-center min-h-screen px-3 mb-10">
         <h1 className="text-4xl sm:text-6xl">
-          총 프로젝트 :<span className="pl-4 text-blue-500">2</span>
+          총 프로젝트 :<span className="pl-4 text-blue-500">{projectList.length}</span>
         </h1>
         <div className="grid grid-cols-1 gap-8 p-12 m-4 lg:grid-cols-2">
-          {projects.map((aProject) => (
+          {projectList.map((aProject) => (
             <ProjectItem key={aProject.id} data={aProject} />
           ))}
         </div>
