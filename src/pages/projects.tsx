@@ -3,8 +3,13 @@ import Head from "next/head";
 import axios from "axios";
 import { DATABASE_ID, TOKEN } from "../../config/index";
 
-export default function projects(projectName: string[]) {
-  console.log(projectName);
+interface ProjectsProps {
+  // length 때문에 'projects' 변수가 배열인지 확인한 다음 길이 속성에 액세스할 수 있는지 확인해야해서 추가한 타입 선언
+  projects: Project[];
+}
+
+export default function projects({ projects }: ProjectsProps) {
+  console.log(projects);
 
   return (
     <Layout>
@@ -15,7 +20,7 @@ export default function projects(projectName: string[]) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1>프로젝트</h1>
+      <h1>총 프로젝트 : {projects.length}</h1>
     </Layout>
   );
 }
@@ -45,12 +50,8 @@ export async function getStaticProps() {
   const response = await axios.request(options);
   const projects = response.data.results;
 
-  const projectName = projects.map(
-    (aProject: Project) => aProject.properties.이름.title[0].plain_text
-  );
-
   return {
-    props: { projectName },
+    props: { projects },
     revalidate: 1,
   };
 }
