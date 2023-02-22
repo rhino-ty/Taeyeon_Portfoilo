@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import Head from "next/head";
 import axios from "axios";
 import { DATABASE_ID, TOKEN } from "../../config/index";
-import ProjectItem from "@/components/projects/ProjectItem";
+import ProjectItem from "../components/projects/ProjectItem";
 
 interface ProjectsProps {
   // length 때문에 'projects' 변수가 배열인지 확인한 다음 길이 속성에 액세스할 수 있는지 확인해야해서 추가한 타입 선언
