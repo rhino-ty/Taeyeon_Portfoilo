@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import Head from "next/head";
 import axios from "axios";
 import { DATABASE_ID, TOKEN } from "../../config/index";
+import ProjectItem from "@/components/projects/ProjectItem";
 
 interface ProjectsProps {
   // length 때문에 'projects' 변수가 배열인지 확인한 다음 길이 속성에 액세스할 수 있는지 확인해야해서 추가한 타입 선언
@@ -9,8 +10,6 @@ interface ProjectsProps {
 }
 
 export default function projects({ projects }: ProjectsProps) {
-  console.log(projects);
-
   return (
     <Layout>
       <Head>
@@ -19,8 +18,17 @@ export default function projects({ projects }: ProjectsProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <div className="flex flex-col items-center justify-center min-h-screen px-3 mb-10">
+        <h1 className="text-4xl sm:text-6xl">
+          총 프로젝트 :<span className="pl-4 text-blue-500">{projects.length}</span>
+        </h1>
 
-      <h1>총 프로젝트 : {projects.length}</h1>
+        <div className="grid grid-cols-1 gap-8 p-12 m-4 md:grid-cols-2">
+          {projects.map((aProject) => (
+            <ProjectItem key={aProject.id} data={aProject} />
+          ))}
+        </div>
+      </div>
     </Layout>
   );
 }
