@@ -10,33 +10,62 @@ export default function ProjectItem({ data }: any) {
   const start = data.properties.작업일자.date.start;
   const end = data.properties.작업일자.date.end;
 
+  const calculatedPeriod = (start: string, end: string): number => {
+    // parseInt로 string 변환
+    if (!start || !end) {
+      return 0;
+    }
+
+    const startDateStringArray = start.split("-");
+    const endDateStringArray = end.split("-");
+
+    const startDate = new Date(
+      parseInt(startDateStringArray[0]),
+      parseInt(startDateStringArray[1]) - 1,
+      parseInt(startDateStringArray[2])
+    );
+    const endDate = new Date(
+      parseInt(endDateStringArray[0]),
+      parseInt(endDateStringArray[1]) - 1,
+      parseInt(endDateStringArray[2])
+    );
+
+    const diffInMs = Math.abs(endDate.getTime() - startDate.getTime());
+    const result = diffInMs / (1000 * 60 * 60 * 24);
+
+    return result;
+  };
+
   return (
     <div className="project-card">
-      {/* <Image
-        className="rounded-t-xl"
-        src={imgSrc}
-        alt="cover image"
-        width={100}
-        height={50}
-        quality={100}
-        loading="lazy"
-      /> */}
+      <div className="relative w-full h-80 overflow-hidden">
+        <Image
+          className="rounded-t-lg object-cover"
+          src={imgSrc}
+          alt="cover image"
+          fill
+          quality={100}
+          loading="lazy"
+        />
+      </div>
 
-      <div className="p-4 flex flex-col items-center">
-        <h1 className="text-2xl font-medium">{title}</h1>
-        <h3 className="mt-4 text-xl">{description}</h3>
-        <div>
-          <a href={github} className="mr-4">
+      <div className="p-4 flex flex-col ">
+        <h1 className="text-2xl font-medium text-center">{title}</h1>
+        <h3 className="mt-4 text-xl text-center">{description}</h3>
+        <div className="mt-2 text-center">
+          <a href={github} target="_blank" rel="noreferrer" className="mr-6">
             깃허브 바로가기
           </a>
-          <a href={velog}>블로그 보러가기</a>
+          <a href={velog} target="_blank" rel="noreferrer">
+            블로그 보러가기
+          </a>
         </div>
-        <p className="my-1 ">
-          작업기간 : {start} ~ {end}
+        <p className="my-1 text-center">
+          작업기간 : {start} ~ {end} ({calculatedPeriod(start, end)}일)
         </p>
-        <div className="flex mt-2">
+        <div className="flex mt-2 overflow-scroll scrollbar-hide">
           {tags.map((aTag: { id: string; name: string; color: string }) => (
-            <h1 className="px-2 py-1 mr-2 rounded-md bg-sky-200 dark:bg-sky-700 w-30" key={aTag.id}>
+            <h1 className="px-1 py-1 mr-2 rounded-md bg-sky-200 dark:bg-sky-700" key={aTag.id}>
               {aTag.name}
             </h1>
           ))}
