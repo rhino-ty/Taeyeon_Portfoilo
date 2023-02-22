@@ -27,13 +27,16 @@ export default function Projects({ projects }: ProjectsProps) {
       </Head>
       <div className="flex flex-col items-center justify-center min-h-screen px-3 mb-10">
         <h1 className="text-4xl sm:text-6xl">
-          총 프로젝트 :<span className="pl-4 text-blue-500">{projectList.length}</span>
+          총 프로젝트 :
+          {projectList ? <span className="pl-4 text-blue-500">{projectList.length}</span> : null}
         </h1>
-        <div className="grid grid-cols-1 gap-8 p-12 m-4 lg:grid-cols-2">
-          {projectList.map((aProject) => (
-            <ProjectItem key={aProject.id} data={aProject} />
-          ))}
-        </div>
+        {projectList ? (
+          <div className="grid grid-cols-1 gap-8 p-12 m-4 lg:grid-cols-2">
+            {projectList.map((aProject) => (
+              <ProjectItem key={aProject.id} data={aProject} />
+            ))}
+          </div>
+        ) : null}
       </div>
     </Layout>
   );
