@@ -1,4 +1,7 @@
 import Image from "next/image";
+import { useState } from "react";
+import Lottie from "react-lottie-player";
+import loading from "public/loading.json";
 
 export default function ProjectItem({ data }: any) {
   const title = data.properties.이름.title[0].plain_text;
@@ -36,9 +39,24 @@ export default function ProjectItem({ data }: any) {
     return result;
   };
 
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setIsImageLoaded(true);
+  };
+
+  const handleImageError = () => {
+    setIsImageLoaded(false);
+  };
+
   return (
     <div className="project-card">
       <div className="relative w-full h-80 overflow-hidden">
+        {!isImageLoaded && (
+          <div className="flex items-center justify-center w-full h-full">
+            <Lottie loop animationData={loading} play style={{ width: 200 }} />
+          </div>
+        )}
         <Image
           className="rounded-t-lg object-cover"
           src={imgSrc}
@@ -46,6 +64,8 @@ export default function ProjectItem({ data }: any) {
           fill
           quality={100}
           loading="lazy"
+          onLoad={handleImageLoad}
+          onError={handleImageError}
         />
       </div>
 
