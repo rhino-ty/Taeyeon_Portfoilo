@@ -65,21 +65,27 @@ export default function AboutContent() {
       <div className="flex flex-row items-center justify-start mb-10 ">
         <div className="w-16 h-16 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 shadow-md mr-5 hover:shadow-lg transition-shadow duration-300">
           <svg
+            xmlns="http://www.w3.org/2000/svg"
             fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1.7"
-            className="w-8 h-8"
             viewBox="0 0 24 24"
+            stroke-width="1.7"
+            stroke="currentColor"
+            className="w-8 h-8"
           >
-            <circle cx="6" cy="6" r="3"></circle>
-            <circle cx="6" cy="18" r="3"></circle>
-            <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+            />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+            />
           </svg>
         </div>
         <div className="flex-grow">
-          <h2 className="text-gray-900 text-2xl title-font font-medium mb-3">The Catalyzer</h2>
+          <h2 className="text-gray-900 text-2xl title-font font-medium mb-3">서울시 관악구</h2>
           <p className="leading-relaxed text-base"></p>
         </div>
       </div>
