@@ -8,11 +8,11 @@ export default function AboutContent() {
     setIsCopied(true);
     setTimeout(() => {
       setIsCopied(false);
-    }, 2000);
+    }, 1000);
   };
 
   return (
-    <div className="flex flex-col flex-wrap lg:py-6 -mb-10 lg:w-1/2 lg:pl-12 lg:text-left text-center">
+    <div className="flex flex-col flex-wrap lg:py-6 -mb-10 lg:w-1/2 lg:pl-12 lg:text-left">
       <div className="flex flex-row items-center justify-start mb-10 ">
         <div className="w-16 h-16 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 shadow-md mr-5 hover:shadow-lg transition-shadow duration-300">
           <svg
@@ -32,7 +32,6 @@ export default function AboutContent() {
         </div>
         <div className="flex-grow">
           <h1 className="text-gray-900 text-2xl title-font font-medium">윤태연</h1>
-          <p className="leading-relaxed text-base"></p>
         </div>
       </div>
 
@@ -58,7 +57,6 @@ export default function AboutContent() {
         </div>
         <div className="flex-grow">
           <h2 className="text-gray-900 text-2xl title-font font-medium mb-3">okko8522@naver.com</h2>
-          <p className="leading-relaxed text-base"></p>
         </div>
         {isCopied && <span className="text-red-400 ml-2">Copied!</span>}
       </div>
@@ -86,7 +84,6 @@ export default function AboutContent() {
         </div>
         <div className="flex-grow">
           <h2 className="text-gray-900 text-2xl title-font font-medium mb-3">서울시 관악구</h2>
-          <p className="leading-relaxed text-base"></p>
         </div>
       </div>
     </div>
