@@ -8,6 +8,7 @@ export default function ProjectItem({ data }: any) {
   const github = data.properties.Github.url;
   const velog = data.properties.Velog.url;
   const description = data.properties.설명.rich_text[0].plain_text;
+  // const charge = data.properties.담당.rich_text[0].plain_text;
   const imgSrc = data.cover.file?.url || data.cover.external.url;
   const tags = data.properties.태그.multi_select;
   const start = data.properties.작업일자.date.start;
@@ -40,11 +41,9 @@ export default function ProjectItem({ data }: any) {
   };
 
   const [isImageLoaded, setIsImageLoaded] = useState(false);
-
   const handleImageLoad = () => {
     setIsImageLoaded(true);
   };
-
   const handleImageError = () => {
     setIsImageLoaded(false);
   };
@@ -72,6 +71,7 @@ export default function ProjectItem({ data }: any) {
       <div className="p-4 flex flex-col ">
         <h1 className="text-2xl font-medium text-center">{title}</h1>
         <h3 className="mt-4 text-xl text-center">{description}</h3>
+        {/* <h3 className="mt-2 text-center">{charge}</h3> */}
         <div className="mt-2 text-center">
           <a href={github} target="_blank" rel="noreferrer" className="mr-6">
             깃허브 바로가기
