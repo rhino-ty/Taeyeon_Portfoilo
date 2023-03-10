@@ -21,6 +21,7 @@ jobs:
         env:
           CI: true
           DEPLOY_TARGET: gh-pages
+          BASE_URL: https://rhino-ty.github.io/taeyeon-portfoilo/
       - run: touch out/.nojekyll
 
       - name: Deploy
