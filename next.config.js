@@ -4,6 +4,7 @@ const nextConfig = {
   images: {
     domains: ["www.notion.so", "s3.us-west-2.amazonaws.com", "images.unsplash.com"],
   },
+  basePath: "/taeyeon-portfoilo",
 };
 
 module.exports = nextConfig;
