@@ -7,6 +7,7 @@ export default function ProjectItem({ data }: any) {
   const title = data.properties.이름.title[0].plain_text;
   const github = data.properties.Github.url;
   const velog = data.properties.Velog.url;
+  const URL = data.properties.URL.url;
   const description = data.properties.설명.rich_text[0].plain_text;
   // const charge = data.properties.담당.rich_text[0].plain_text;
   const imgSrc = data.cover.file?.url || data.cover.external.url;
@@ -69,7 +70,9 @@ export default function ProjectItem({ data }: any) {
       </div>
 
       <div className="p-4 flex flex-col ">
-        <h1 className="text-2xl font-medium text-center">{title}</h1>
+        <a href={`${URL}`}>
+          <h1 className="text-2xl font-medium text-center">{title}</h1>
+        </a>
         <h3 className="mt-4 text-xl text-center">{description}</h3>
         {/* <h3 className="mt-2 text-center">{charge}</h3> */}
         <div className="mt-2 text-center">
