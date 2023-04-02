@@ -4,16 +4,16 @@ import Lottie from "react-lottie-player";
 import loading from "public/loading.json";
 
 export default function ProjectItem({ data }: any) {
-  const title = data.properties.이름.title[0].plain_text;
-  const github = data.properties.Github.url;
-  const velog = data.properties.Velog.url;
-  const Deploy = data.properties.Deploy.url;
-  const description = data.properties.설명.rich_text[0].plain_text;
+  const title = data?.properties?.이름?.title[0]?.plain_text || "";
+  const github = data?.properties?.Github?.url || "";
+  const velog = data?.properties?.Velog?.url || "";
+  const Deploy = data?.properties?.Deploy?.url || "";
+  const description = data?.properties?.설명?.rich_text[0]?.plain_text || "";
   // const charge = data.properties.담당.rich_text[0].plain_text;
-  const imgSrc = data.cover.file?.url || data.cover.external.url;
-  const tags = data.properties.태그.multi_select;
-  const start = data.properties.작업일자.date.start;
-  const end = data.properties.작업일자.date.end;
+  const imgSrc = data?.cover?.file?.url || data?.cover?.external?.url || "";
+  const tags = data?.properties?.태그?.multi_select || [];
+  const start = data?.properties?.작업일자?.date?.start || "";
+  const end = data?.properties?.작업일자?.date?.end || "";
 
   const calculatedPeriod = (start: string, end: string): number => {
     // parseInt로 string 변환
