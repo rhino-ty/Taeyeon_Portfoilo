@@ -90,9 +90,12 @@ export default function ProjectItem({ data }: any) {
         <p className="my-1 text-center">
           작업기간 : {start} ~ {end} ({calculatedPeriod(start, end)}일)
         </p>
-        <div className="flex mt-2 overflow-scroll scrollbar-hide">
+        <div className="flex mt-2 w-full overflow-x-auto scrollbar-hide">
           {tags.map((aTag: { id: string; name: string; color: string }) => (
-            <h1 className="px-1 py-1 mr-2 rounded-md bg-sky-200 dark:bg-sky-700" key={aTag.id}>
+            <h1
+              className="px-1 py-1 mr-2 rounded-md bg-sky-200 dark:bg-sky-700 whitespace-nowrap"
+              key={aTag.id}
+            >
               {aTag.name}
             </h1>
           ))}
