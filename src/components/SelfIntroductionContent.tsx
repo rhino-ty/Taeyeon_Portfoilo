@@ -1,59 +1,97 @@
-import { Inter } from "@next/font/google";
 import Link from "next/link";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function SelfIntroductionContent() {
   return (
     <>
-      <div className="lg:flex-grow lg:w-1/2 lg:pl-28 flex flex-col lg:items-start lg:text-left items-center text-center">
+      <main className="lg:flex-grow lg:w-1/2  flex flex-col lg:items-start lg:text-left items-center text-center">
         <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
-          안녕하세요!&nbsp;
-          <br className="hidden lg:inline-block" />
-          개발에 재미와 목표를 찾은 개발자, 윤태연입니다.
+          개발과 구현에 재미와 흥미를 추구하는 프론트엔드 개발자
         </h1>
-        <div className="mb-8 leading-relaxed">
-          <h2 className="text-gray-900 text-lg title-font font-medium mt-4">
-            개발에 재미와 목표를 찾은 개발자
+
+        <section className="mb-8 leading-relaxed">
+          <h2 className="self-intro-header title-font">무엇이 재미있는지 아는 개발자</h2>
+          <p className="self-intro-content">
+            저는 재미를 추구하는 것이 성공과 롱런의 핵심이라고 생각합니다. 그러나 오랜 시간 동안
+            재미를 찾지 못했던 제가 개발 분야를 접하고, 나만의 사고와 몰입을 바탕으로 개발하여
+            결과물을 만드는 것이 재미있는 일이라는 것을 깨달았습니다.
+          </p>
+          <p className="self-intro-content">
+            특히 프론트엔드 개발을 좋아하게 되었는데, 언제 어디서든 내가 생각한 작업물을 구현할 수
+            있는 자유로움과 즉각적인 결과를 볼 수 있는 점이 큰 매력이었습니다.
+          </p>
+          <p className="self-intro-content">
+            또한 커스텀 훅을 이용하여 기능 구현 중 발생한 문제를 해결하는 과정에서 며칠간 고민하고
+            고생했지만, 문제를 해결하고 나서의 성취감과 재미를 느낀 경험이 있습니다. 이러한 경험이
+            제 직업 선택에 큰 영향을 주었습니다.
+          </p>
+          <p className="self-intro-content">
+            저는 당장 재미 없는 작업일지라도 그 과정에서 얻는 뿌듯함과 성취감의 재미, 그리고 문제를
+            해결하는 과정에서 더 높은 차원의 재미를 아는 개발자가 되고싶습니다.
+          </p>
+
+          <h2 className="self-intro-header title-font">기록함으로써 생각을 정리하는 개발자</h2>
+          <p className="self-intro-content">
+            저는 보통 무엇을 하든 여러 번 시도하고 실패를 해야만 마음이 편해지고 실패를 통해 배우는
+            사람입니다.
+          </p>
+          <p className="self-intro-content">
+            하지만 이러한 개발자로서의 반복적인 행동은 구현에 걸리는 시간이 오래 걸리는 단점으로
+            작용했습니다.
+          </p>
+          <p className="self-intro-content">
+            그래서 개발을 하면서 깨달은 점이나 해결 방법 등을 매 순간 기록하여 나만의 생각 정리를
+            시작하였습니다.
+          </p>
+          <p className="self-intro-content">
+            이렇게 기록하면서 문제를 관찰하면 곰곰히 생각할 수 있어서 감정도 차분해지고, 기술
+            블로그의 글에 나온 비슷한 문제를 발견하고 해결할 때도 있었습니다.
+          </p>
+
+          <h2 className="self-intro-header title-font">
+            경험을 통해 시야를 넓히고 싶은 경험 중시 개발자
           </h2>
-          <p>
-            어릴 때부터 어떤 걸 만들고 남들에게 보여주고 받은 반응과 피드백을 재밌어하고 즐겼습니다.
-            그러던 중 웹 개발을 알게 되고 제약없이 다수에게 서비스를 제공할 수 있는 것에 매료돼
-            부트캠프에 들어갔습니다.
+          <p className="self-intro-content">
+            개발 중 어떤 행동이든 경험이 있을 것이고, 그 경험들을 소중히 여기며 끝까지 해보면 시야가
+            넓어진다고 생각합니다. 시야가 넓다는 것은 많이 알고 있다는 뜻이며, 이는 경험을 많이
+            해봤다는 것과도 같습니다.
           </p>
-          <p>
-            부트캠프에서 배우며 제가 생각한 디자인, 기능들을 만들어서 뷰포트에 바로 띄울 수 있다는
-            점에서 더욱 웹 개발이 좋아졌고, 이해한 웹 개발의 언어를 통해 자신만의 서비스 및 기능을
-            구현하고 싶은 욕심이 생겼습니다.
+          <p className="self-intro-content">
+            팀 프로젝트를 하며 팀원이 모르는 점에 대해서 알려주고, 해결했을 때 큰 뿌듯함을
+            느꼈습니다.
           </p>
-          <h2 className="text-gray-900 text-lg title-font font-medium mt-4">
-            경험 기록 중시 개발자
-          </h2>
-          <p>
-            경험을 중요하게 생각해 원래 메모하고 기록하는 것을 자주 해왔습니다. 개발도 마찬가지로
-            경험이 중요하고, 복기를 통해 다음 문제의 해결 단서가 되기에 부트캠프에서 경험한 것들은
-            전부 기록하였고, 프로젝트에서 작성글을 팀원에게 공유하고 해결한 적이 있습니다.
+          <p className="self-intro-content">
+            결국 저의 삽질 경험이 다른 개발자들에게 도움이 되어 개발 시간을 절약할 수 있었습니다.
           </p>
-          <h2 className="text-gray-900 text-lg title-font font-medium mt-4">
-            모름을 알고 넓은 시야를 가지고 싶은 개발자
-          </h2>
-          <p>
-            배움에는 끝이 없다고 어떤 일이든 끝까지 학습해야한다고 알고 있습니다. 또한 아는 만큼
-            보인다고 모르는 것이든 틀린 것이든 안 순간 채우기 위해 노력해야합니다. 결국 개발에 대한
-            시야는 넓어지고, 성장한다는 것을 알고 있습니다. 그렇기에 협업을 하며 상대보다 내가
-            부족한 점에 대해 알고 타협하는 것이 아닌 배우고 성장하며 시야를 넓히고 싶습니다.
+          <p className="self-intro-content">
+            도움을 청하지 않더라도 적절한 도움을 제공하며, 다른 개발자들의 문제를 공감하고 해결책을
+            제시할 수 있는 개발자가 되고 싶습니다.
           </p>
-          <p>
-            그렇게 조금씩 시야를 넓혀가며 한걸음 씩 걸어가 개발에 대한 순수한 재미를 찾아가고
-            있습니다.
+
+          <h2 className="self-intro-header title-font">강점을 알고 강점을 발전시키고픈 개발자 </h2>
+          <p className="self-intro-content">
+            <strong>문제 해결</strong> : 저는 문제를 해결하기 위해서 대안책을 여러 개 모색하고,
+            각각의 장단점을 분석하여 적용해왔습니다. 이를 통해 문제 해결에 대한 재미와 몰입감을
+            느꼈고, 이러한 경험을 바탕으로 새로운 문제가 발생했을 때 빠르게 대처할 수 있습니다. 예를
+            들어, 팀 프로젝트에서 개발 중 펫칭 커스텀훅에 대해서 여러 가지 대안책으로 네트워크 호출
+            코드 관리, Axios 관리 등의 방법을 제시하고 팀원들이랑 멘토와 함께 논의하여 적용한 결과,
+            효과적으로 문제를 해결할 수 있었습니다.
           </p>
-        </div>
-        <div className="flex justify-center">
-          <Link href="/projects" className="btn-project">
-            프로젝트 보러가기
-          </Link>
-        </div>
-      </div>
+          <p className="self-intro-content">
+            <strong>커뮤니케이션</strong> : 팀 프로젝트를 진행하면서 제가 가진 협업 능력을
+            적극적으로 발휘하고 싶었고, 제가 이전에 참여했던 프로젝트에서도 팀원들과 의사소통을
+            원활히 하며 협업을 즐겼습니다. 특히, 기획이나 막히는 문제 해결을 위해 대안책을 여러 개
+            모색하고, 이를 팀원들과 함께 논의하며 해결해 나갔습니다. 또한 비직무 커뮤니케이션이나
+            스몰토킹도 즐겼습니다. 이러한 경험을 토대로 입사하게 된다면 저만의 커뮤니케이션을 통해
+            팀의 유대를 쌓아가고 싶습니다.
+          </p>
+          <p className="self-intro-content">
+            <strong>학습</strong> : 새로운 것을 배우는 것을 좋아하여, 거리낌 없이 적극적으로 학습에
+            참여합니다. 프로젝트에서 새로운 기술을 적용하고자 하면, 공식 문서를 살펴보고 스스로
+            적용하고, 기록하는 등 끊임없이 학습하여 발전하는 것을 즐기고 있습니다. 이러한 노력이
+            나의 시야를 넓히는데 큰 도움이 될 것이라고 생각합니다.
+          </p>
+        </section>
+      </main>
     </>
   );
 }
