@@ -4,13 +4,9 @@ import { useEffect, useState } from "react";
 // import axios from "axios";
 import { DATABASE_ID, TOKEN } from "../../config";
 import ProjectItem from "../components/projects/ProjectItem";
+import { Project, ProjectsArrProps } from "@/types/projectType";
 
-interface ProjectsProps {
-  // length 때문에 'projects' 변수가 배열인지 확인한 다음 길이 속성에 액세스할 수 있는지 확인해야해서 추가한 타입 선언
-  projects: Project[];
-}
-
-export default function Projects({ projects }: ProjectsProps) {
+export default function Projects({ projects }: ProjectsArrProps) {
   const [projectList, setProjectList] = useState<Project[]>([]);
 
   useEffect(() => {
@@ -33,7 +29,7 @@ export default function Projects({ projects }: ProjectsProps) {
         {projectList ? (
           <div className="grid grid-cols-1 gap-8 p-12 m-4 lg:grid-cols-2">
             {projectList.map((aProject) => (
-              <ProjectItem key={aProject.id} data={aProject} />
+              <ProjectItem key={aProject.id} aProject={aProject} />
             ))}
           </div>
         ) : null}

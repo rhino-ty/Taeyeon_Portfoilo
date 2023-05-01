@@ -2,18 +2,19 @@ import Image from "next/image";
 import { useState } from "react";
 import Lottie from "react-lottie-player";
 import loading from "public/loading.json";
+import { Project } from "@/types/projectType";
 
-export default function ProjectItem({ data }: any) {
-  const title = data?.properties?.이름?.title[0]?.plain_text || "";
-  const github = data?.properties?.Github?.url || "";
-  const velog = data?.properties?.Velog?.url || "";
-  const Deploy = data?.properties?.Deploy?.url || "";
-  const description = data?.properties?.설명?.rich_text[0]?.plain_text || "";
-  // const charge = data.properties.담당.rich_text[0].plain_text;
-  const imgSrc = data?.cover?.file?.url || data?.cover?.external?.url || "";
-  const tags = data?.properties?.태그?.multi_select || [];
-  const start = data?.properties?.작업일자?.date?.start || "";
-  const end = data?.properties?.작업일자?.date?.end || "";
+export default function ProjectItem({ aProject }: { aProject: Project }) {
+  const imgSrc = aProject?.cover?.file?.url || aProject?.cover?.external?.url || "";
+  const title = aProject?.properties?.이름?.title[0]?.plain_text || "";
+  const github = aProject?.properties?.Github?.url || "";
+  const velog = aProject?.properties?.Velog?.url || "";
+  const Deploy = aProject?.properties?.Deploy?.url || "";
+  const description = aProject?.properties?.설명?.rich_text[0]?.plain_text || "";
+  // const charge = aProject.properties.담당.rich_text[0].plain_text;
+  const tags = aProject?.properties?.태그?.multi_select || [];
+  const start = aProject?.properties?.작업일자?.date?.start || "";
+  const end = aProject?.properties?.작업일자?.date?.end || "";
 
   const calculatedPeriod = (start: string, end: string): number => {
     // parseInt로 string 변환
