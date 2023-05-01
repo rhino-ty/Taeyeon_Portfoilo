@@ -1,5 +1,5 @@
 export interface AnimationProps {
-  lottieJson: string;
+  animationType: string;
   width: number;
   height: number;
 }

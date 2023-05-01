@@ -7,19 +7,16 @@ import writingAnimation from "public/lottieJson/writing-blue-bg.json";
 import telescope from "public/lottieJson/telescope.json";
 import strongIcon from "public/lottieJson/strong-icon.json";
 
-export default function Animation({ lottieJson, width, height }: AnimationProps) {
-  if (lottieJson === "fun") {
-    return <Lottie loop animationData={funPersnalAnimation} play style={{ width, height }} />;
-  }
-  if (lottieJson === "writing") {
-    return <Lottie loop animationData={writingAnimation} play style={{ width, height }} />;
-  }
-  if (lottieJson === "telescope") {
-    return <Lottie loop animationData={telescope} play style={{ width, height }} />;
-  }
-  if (lottieJson === "strong") {
-    return <Lottie loop animationData={strongIcon} play style={{ width, height }} />;
-  }
+export default function Animation({ animationType, width, height }: AnimationProps) {
+  const animationData = {
+    fun: funPersnalAnimation,
+    writing: writingAnimation,
+    telescope: telescope,
+    strong: strongIcon,
+    default: mainAnimation,
+  };
 
-  return <Lottie loop animationData={mainAnimation} play style={{ width, height }} />;
+  const animation = animationData[animationType ?? "default"];
+
+  return <Lottie loop animationData={animation} play style={{ width, height }} />;
 }
