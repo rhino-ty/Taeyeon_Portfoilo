@@ -18,7 +18,11 @@ export default function Animation({ animationType, width, height }: AnimationPro
 
   const animation = animationData[animationType ?? "default"];
 
-  return <Lottie loop animationData={animation} play style={{ width, height }} />;
+  return (
+    <div className="flex items-center justify-center">
+      <Lottie loop animationData={animation} play style={{ width, height }} />
+    </div>
+  );
 }
 
 // 예시
