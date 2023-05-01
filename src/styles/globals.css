@@ -20,11 +20,11 @@
 }
 
 .self-intro-header {
-  @apply text-gray-900 text-lg font-medium mt-5;
+  @apply text-gray-900 text-2xl font-medium mb-5;
 }
 
 .self-intro-content {
-  @apply text-slate-700 dark:text-slate-400 ease-in-out duration-200 mt-1;
+  @apply text-slate-700 dark:text-slate-400 ease-in-out duration-200 text-lg mt-1;
 }
 
 h1,
