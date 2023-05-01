@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import Head from "next/head";
 import Image from "next/image";
-import AboutMeImage from "../../public/AboutMePhoto.jpg";
+import AboutMeImage from "../../public/AboutMePhoto.jpeg";
 import AboutContent from "../components/AboutContent";
 
 export default function Projects() {
