@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function HomeHero() {
+export default function IndexContent() {
   return (
     <>
       <div className="lg:flex-grow lg:w-1/2 lg:pl-28 flex flex-col lg:items-start lg:text-left items-center text-center">

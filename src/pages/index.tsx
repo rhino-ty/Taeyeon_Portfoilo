@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Layout from "../components/Layout";
-import HomeHero from "../components/home/HomeHero";
+import IndexContent from "../components/IndexContent";
 import Animaition from "../components/Animaion";
 
 export default function Home() {
@@ -18,7 +18,7 @@ export default function Home() {
           <div className="lg:max-w-lg lg:w-full md:w-3/4 mb-10 md:mb-0">
             <Animaition />
           </div>
-          <HomeHero />
+          <IndexContent />
         </div>
       </section>
     </Layout>
