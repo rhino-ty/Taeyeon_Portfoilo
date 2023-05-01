@@ -1,8 +1,7 @@
+import { AnimationProps } from "@/types/animationPropsType";
 import React from "react";
 import Lottie from "react-lottie-player";
 
-import lottieJson from "public/main_animation.json";
-
-export default function Animation() {
-  return <Lottie loop animationData={lottieJson} play style={{ width: 600, height: 450 }} />;
+export default function Animation({ lottieJson, width, height }: AnimationProps) {
+  return <Lottie loop animationData={lottieJson} play style={{ width, height }} />;
 }
