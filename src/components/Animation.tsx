@@ -22,4 +22,4 @@ export default function Animation({ animationType, width, height }: AnimationPro
 }
 
 // 예시
-//<Animaition animationType="" width={} height={} />
+//<Animation animationType="" width={} height={} />
