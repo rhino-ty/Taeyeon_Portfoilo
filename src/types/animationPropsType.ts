@@ -1,5 +1,5 @@
 export interface AnimationProps {
-  lottieJson: Record<string, any>;
+  lottieJson: string;
   width: number;
   height: number;
 }
