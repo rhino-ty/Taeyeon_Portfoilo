@@ -20,3 +20,6 @@ export default function Animation({ animationType, width, height }: AnimationPro
 
   return <Lottie loop animationData={animation} play style={{ width, height }} />;
 }
+
+// 예시
+//<Animaition animationType="" width={} height={} />
