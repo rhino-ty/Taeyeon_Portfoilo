@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import SelfIntroductionContent from "@/components/SelfIntroductionContent";
 import Head from "next/head";
 
 export default function SelfIntroduction() {
@@ -13,7 +14,7 @@ export default function SelfIntroduction() {
 
       <section className="flex min-h-screen flex-col items-center justify-center text-gray-600 body-font">
         <div className="container mx-auto flex px-5 py-12 lg:flex-row flex-col items-center">
-          <SelfIntroduction />
+          <SelfIntroductionContent />
         </div>
       </section>
     </Layout>

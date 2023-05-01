@@ -21,7 +21,7 @@ export default function Header() {
           <Link href="/" className="mr-5 hover:text-gray-900 cursor-pointer">
             Home
           </Link>
-          <Link href="/selfIntroduction" className="mr-5 hover:text-gray-900 cursor-pointer">
+          <Link href="/self-introduction" className="mr-5 hover:text-gray-900 cursor-pointer">
             Self-Introduction
           </Link>
           <Link href="/projects" className="mr-5 hover:text-gray-900 cursor-pointer">
