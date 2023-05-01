@@ -24,7 +24,7 @@
 }
 
 .self-intro-content {
-  @apply text-slate-700 dark:text-slate-400 ease-in-out duration-200 text-lg mt-1;
+  @apply text-slate-700 dark:text-slate-400 ease-in-out duration-200 text-lg mt-3;
 }
 
 h1,
