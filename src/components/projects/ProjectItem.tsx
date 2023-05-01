@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import Lottie from "react-lottie-player";
-import loading from "public/loading.json";
+import loading from "public/lottieJson/loading.json";
 import { Project } from "@/types/projectType";
 
 export default function ProjectItem({ aProject }: { aProject: Project }) {
