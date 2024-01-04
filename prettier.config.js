@@ -6,4 +6,7 @@ module.exports = {
   trailingComma: 'all',
   printWidth: 80,
   bracketSpacing: true,
+
+  // npm install -D prettier prettier-plugin-tailwindcss
+  plugins: ['prettier-plugin-tailwindcss'],
 };
