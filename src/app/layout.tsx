@@ -1,9 +1,24 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import '../styles/globals.css';
 import { ThemeProviders } from '@/utils/theme-provider';
+import { Noto_Sans_KR } from 'next/font/google'; // 한글 NotoSans를 사용.
 
-const inter = Inter({ subsets: ['latin'] });
+// Noto Sans Korean
+const notoSansKr = Noto_Sans_KR({
+  subsets: ['latin'],
+  weight: ['100', '300', '400', '500', '700', '900'],
+  fallback: [
+    '-apple-system',
+    'Malgun Gothic',
+    'Apple SD Gothic Neo',
+    'Roboto',
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'system-ui',
+    'sans-serif',
+  ],
+});
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -17,7 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={notoSansKr.className}>
         <ThemeProviders>{children}</ThemeProviders>
       </body>
     </html>
