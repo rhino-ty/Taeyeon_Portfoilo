@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import '../styles/globals.css';
 import { ThemeProviders } from '@/utils/theme-provider';
 import { Noto_Sans_KR } from 'next/font/google'; // 한글 NotoSans를 사용.
+import HeaderComponent from '@/layouts/header';
 
 // Noto Sans Korean
 const notoSansKr = Noto_Sans_KR({
@@ -38,7 +39,10 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning>
       <body className={notoSansKr.className}>
-        <ThemeProviders>{children}</ThemeProviders>
+        <ThemeProviders>
+          <HeaderComponent />
+          {children}
+        </ThemeProviders>
       </body>
     </html>
   );
