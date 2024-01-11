@@ -1,53 +1,60 @@
+import Link from 'next/link';
+
 export default function HeaderComponent() {
   return (
     <div className='navbar bg-base-100'>
       <div className='navbar-start'>
-        <a className='btn btn-ghost text-xl'>daisyUI</a>
+        {/* <Link href={""} className='btn btn-ghost text-xl'></Link> */}
       </div>
       <div className='navbar-end'>
-        <ul className='menu menu-horizontal hidden px-1 lg:flex'>
-          <li>
-            <a>Item 1</a>
-          </li>
-          <li>
-            <a>Item 3</a>
-          </li>
-          <li>
-            <details className='dropdown'>
-              <summary>Theme</summary>
-              <ul className='dropdown-content'>
-                <li>
-                  <input
-                    type='radio'
-                    name='theme-dropdown'
-                    className='theme-controller btn btn-sm btn-block btn-ghost justify-start'
-                    aria-label='System'
-                    value='default'
-                  />
-                </li>
-                <li>
-                  <input
-                    type='radio'
-                    name='theme-dropdown'
-                    className='theme-controller btn btn-sm btn-block btn-ghost justify-start'
-                    aria-label='Light'
-                    value='light'
-                  />
-                </li>
-                <li>
-                  <input
-                    type='radio'
-                    name='theme-dropdown'
-                    className='theme-controller btn btn-sm btn-block btn-ghost justify-start'
-                    aria-label='Dark'
-                    value='dark'
-                  />
-                </li>
-              </ul>
-            </details>
-          </li>
-        </ul>
-        <div className='dropdown'>
+        <div className='hidden lg:block'>
+          <Link href={''} className='btn btn-ghost rounded-btn'>
+            Portfolio
+          </Link>
+          <div className='dropdown dropdown-end'>
+            <div
+              tabIndex={0}
+              role='button'
+              className='btn btn-ghost rounded-btn '
+            >
+              Theme
+            </div>
+            <ul
+              tabIndex={0}
+              className='menu dropdown-content z-[1] mt-4 w-52 rounded-box bg-base-100 p-2 shadow-lg '
+            >
+              <li>
+                <input
+                  type='radio'
+                  name='theme-dropdown'
+                  className='theme-controller btn btn-ghost btn-sm btn-block justify-start'
+                  aria-label='System'
+                  value='default'
+                />
+              </li>
+              <li>
+                <input
+                  type='radio'
+                  name='theme-dropdown'
+                  className='theme-controller btn btn-ghost btn-sm btn-block justify-start'
+                  aria-label='Light'
+                  value='light'
+                />
+              </li>
+              <li>
+                <input
+                  type='radio'
+                  name='theme-dropdown'
+                  className='theme-controller btn btn-ghost btn-sm btn-block justify-start'
+                  aria-label='Dark'
+                  value='dark'
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className='dropdown dropdown-left'>
           <div tabIndex={0} role='button' className='btn btn-ghost lg:hidden'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -65,19 +72,19 @@ export default function HeaderComponent() {
           </div>
           <ul
             tabIndex={0}
-            className='menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow'
+            className='menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow'
           >
             <li>
-              <a>Item 1</a>
+              <Link href={''}>Item 1</Link>
             </li>
             <li>
-              <a>Parent</a>
+              <Link href={''}>Parent</Link>
               <ul className='p-2'>
                 <li>
-                  <a>Submenu 1</a>
+                  <Link href={''}>Submenu 1</Link>
                 </li>
                 <li>
-                  <a>Submenu 2</a>
+                  <Link href={''}>Submenu 2</Link>
                 </li>
               </ul>
             </li>
