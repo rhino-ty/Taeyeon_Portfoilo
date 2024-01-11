@@ -50,7 +50,9 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning>
-      <body className={notoSansKr.className}>
+      <body
+      // className={notoSansKr.className}
+      >
         <ThemeProviders>
           <HeaderComponent />
           {children}
