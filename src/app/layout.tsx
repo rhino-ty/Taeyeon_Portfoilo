@@ -1,13 +1,32 @@
 import type { Metadata } from 'next';
 import '../styles/globals.css';
 import { ThemeProviders } from '@/utils/theme-provider';
-import { Noto_Sans_KR } from 'next/font/google'; // 한글 NotoSans를 사용.
+// import { Noto_Sans_KR } from 'next/font/google'; // 한글 NotoSans를 사용.
+import localFont from 'next/font/local'; // Pretendard 사용
 import HeaderComponent from '@/layouts/header';
 
 // Noto Sans Korean
-const notoSansKr = Noto_Sans_KR({
-  subsets: ['latin'],
-  weight: ['100', '300', '400', '500', '700', '900'],
+// const notoSansKr = Noto_Sans_KR({
+//   subsets: ['latin'],
+//   weight: ['100', '300', '400', '500', '700', '900'],
+//   fallback: [
+//     '-apple-system',
+//     'Malgun Gothic',
+//     'Apple SD Gothic Neo',
+//     'Roboto',
+//     'Apple Color Emoji',
+//     'Segoe UI Emoji',
+//     'Segoe UI Symbol',
+//     'system-ui',
+//     'sans-serif',
+//   ],
+// });
+
+// pretendard: Next.JS Local Fonts 사용
+// https://nextjs.org/docs/app/building-your-application/optimizing/fonts#local-fonts
+const pretendard = localFont({
+  src: './PretendardVariable.woff2',
+  display: 'swap',
   fallback: [
     '-apple-system',
     'Malgun Gothic',
@@ -51,7 +70,8 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning>
       <body
-      // className={notoSansKr.className}
+        className={pretendard.className}
+        // className={notoSansKr.className}
       >
         <ThemeProviders>
           <HeaderComponent />

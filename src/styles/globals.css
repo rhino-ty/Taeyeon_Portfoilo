@@ -8,26 +8,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'Pretendard Variable';
-  font-weight: 45 920;
-  font-style: normal;
-  font-display: swap;
-  src: url('./woff2/PretendardVariable.woff2') format('woff2-variations');
-}
-body {
-  font-family:
-    -apple-system,
-    Apple SD Gothic Neo,
-    Malgun Gothic,
-    Roboto,
-    Apple Color Emoji,
-    Segoe UI Emoji,
-    Segoe UI Symbol,
-    system-ui,
-    sans-serif;
-}
-
 .bg-primary {
   @apply bg-slate-50 duration-200 ease-in-out dark:bg-slate-800;
 }
