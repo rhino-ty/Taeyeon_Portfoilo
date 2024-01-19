@@ -75,54 +75,6 @@
   }
 }
 
-.bg-primary {
-  @apply bg-slate-50 duration-200 ease-in-out dark:bg-slate-800;
-}
-
-.project-card {
-  @apply m-3 flex w-full transform flex-col rounded-xl
-            border border-gray-300 transition duration-300 hover:text-blue-600
-            hover:shadow-2xl
-            lg:max-w-lg
-            dark:border-gray-200/50
-            dark:hover:shadow-slate-700;
-}
-
-.btn-project {
-  @apply inline-flex rounded border-0 bg-blue-500 px-6 py-2 text-lg text-white hover:bg-blue-600 focus:outline-none dark:text-slate-50;
-}
-
-.self-intro-header {
-  @apply mb-5 text-2xl font-medium text-gray-900;
-}
-
-.self-intro-content {
-  @apply mt-3 text-lg text-slate-700 duration-200 ease-in-out dark:text-slate-400;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply text-slate-900 duration-200 ease-in-out dark:text-slate-50;
-}
-
-footer {
-  @apply bg-gray-100 text-gray-600
-  duration-200 ease-in-out dark:bg-slate-600/20 dark:text-white;
-}
-
-a {
-  @apply text-slate-500 duration-200 ease-in-out hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-50;
-}
-
-p {
-  @apply text-slate-700 duration-200 ease-in-out dark:text-slate-400;
-}
-
-/* 테일윈드 CSS animate-pulse-custom 커스텀 */
 @keyframes pulse {
   0%,
   100% {
@@ -186,3 +138,52 @@ p {
     border-radius: 20px;
   }
 }
+
+/* .bg-primary {
+  @apply bg-slate-50 duration-200 ease-in-out dark:bg-slate-800;
+}
+
+.project-card {
+  @apply m-3 flex w-full transform flex-col rounded-xl
+            border border-gray-300 transition duration-300 hover:text-blue-600
+            hover:shadow-2xl
+            lg:max-w-lg
+            dark:border-gray-200/50
+            dark:hover:shadow-slate-700;
+}
+
+.btn-project {
+  @apply inline-flex rounded border-0 bg-blue-500 px-6 py-2 text-lg text-white hover:bg-blue-600 focus:outline-none dark:text-slate-50;
+}
+
+.self-intro-header {
+  @apply mb-5 text-2xl font-medium text-gray-900;
+}
+
+.self-intro-content {
+  @apply mt-3 text-lg text-slate-700 duration-200 ease-in-out dark:text-slate-400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply text-slate-900 duration-200 ease-in-out dark:text-slate-50;
+}
+
+footer {
+  @apply bg-gray-100 text-gray-600
+  duration-200 ease-in-out dark:bg-slate-600/20 dark:text-white;
+}
+
+a {
+  @apply text-slate-500 duration-200 ease-in-out hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-50;
+}
+
+p {
+  @apply text-slate-700 duration-200 ease-in-out dark:text-slate-400;
+} */
+
+/* 테일윈드 CSS animate-pulse-custom 커스텀 */
