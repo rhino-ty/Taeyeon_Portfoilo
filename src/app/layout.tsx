@@ -70,8 +70,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         // className={notoSansKr.className}
       >
         <ThemeProviders>
-          <HeaderComponent />
-          {children}
+          <main className='relative'>
+            <HeaderComponent className='' />
+            {children}
+          </main>
         </ThemeProviders>
       </body>
     </html>
