@@ -25,7 +25,7 @@ import HeaderComponent from '@/layouts/header';
 // pretendard: Next.JS Local Fonts 사용
 // https://nextjs.org/docs/app/building-your-application/optimizing/fonts#local-fonts
 const pretendard = localFont({
-  src: './PretendardVariable.woff2',
+  src: './fonts/PretendardVariable.woff2',
   display: 'swap',
   fallback: [
     '-apple-system',
@@ -71,7 +71,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       >
         <ThemeProvider attribute='class' defaultTheme='system'>
           <main className='relative'>
-            <HeaderComponent className='' />
+            <HeaderComponent />
             {children}
           </main>
         </ThemeProvider>
