@@ -1,11 +1,12 @@
 'use client';
-import { ThemeProvider } from 'next-themes';
+import { ThemeProvider as NextThemesProvider } from 'next-themes';
+import { ThemeProviderProps } from 'next-themes/dist/types';
 
-export function ThemeProviders({ children }: { children: React.ReactNode }) {
+export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
   // OS 다크모드 감지 코드
   // const isOsColorTheme = window.matchMedia('(prefers-color-scheme: dark)')
   //   .matches
   //   ? 'dark'
   //   : 'light';
-  return <ThemeProvider>{children}</ThemeProvider>;
+  return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
 }

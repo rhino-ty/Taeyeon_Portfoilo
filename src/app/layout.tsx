@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import '../styles/globals.css';
-import { ThemeProviders } from '@/utils/theme-provider';
+import { ThemeProvider } from '@/utils/theme-provider';
 // import { Noto_Sans_KR } from 'next/font/google'; // 한글 NotoSans를 사용.
 import localFont from 'next/font/local'; // Pretendard 사용
 import HeaderComponent from '@/layouts/header';
@@ -69,12 +69,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className={pretendard.className}
         // className={notoSansKr.className}
       >
-        <ThemeProviders>
+        <ThemeProvider attribute='class' defaultTheme='system'>
           <main className='relative'>
             <HeaderComponent className='' />
             {children}
           </main>
-        </ThemeProviders>
+        </ThemeProvider>
       </body>
     </html>
   );
