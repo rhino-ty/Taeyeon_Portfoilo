@@ -72,6 +72,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider attribute='class' defaultTheme='system'>
           <main className='relative'>
             <HeaderComponent />
+            <div className='h-28 w-full' />
             {children}
           </main>
         </ThemeProvider>
