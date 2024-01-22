@@ -1,21 +1,11 @@
 'use client';
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 import Link from 'next/link';
 import { cn } from '@/utils/tailwind-merge';
+import { Button } from './button';
 
-export const FloatingNav = ({
-  navItems,
-  className,
-}: {
-  navItems: {
-    name: string;
-    link: string;
-    icon?: JSX.Element;
-    target?: string;
-  }[];
-  className?: string;
-}) => {
+export const FloatingNav = ({ navItems, className }: { navItems: NavItem[]; className?: string }) => {
   const { scrollYProgress } = useScroll();
 
   const [visible, setVisible] = useState(true);
@@ -53,18 +43,24 @@ export const FloatingNav = ({
           className,
         )}
       >
-        {navItems.map((navItem: any, idx: number) => (
-          <Link
-            key={`link=${idx}`}
-            href={navItem.link}
-            className={cn(
-              'relative flex items-center space-x-1 text-neutral-600 hover:text-neutral-500 dark:text-neutral-50 dark:hover:text-neutral-300',
+        {navItems.map((navItem: NavItem, idx: number) => (
+          <>
+            {navItem.link ? (
+              <Button variant='ghost'>
+                <Link
+                  key={`link=${idx}`}
+                  href={navItem.link}
+                  className={cn('relative flex items-center')}
+                  target={navItem.target ? navItem.target : '_self'}
+                >
+                  <span className='block sm:hidden'>{navItem.icon}</span>
+                  <span className='hidden text-base sm:block'>{navItem.name}</span>
+                </Link>
+              </Button>
+            ) : (
+              <Fragment key={`fragment-${idx}`}>{navItem.html}</Fragment>
             )}
-            target={navItem.target ? navItem.target : '_self'}
-          >
-            <span className='block sm:hidden'>{navItem.icon}</span>
-            <span className='hidden text-base sm:block'>{navItem.name}</span>
-          </Link>
+          </>
         ))}
       </motion.div>
     </AnimatePresence>
@@ -138,7 +134,7 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className='boder shadow-input relative flex justify-center space-x-4 rounded-full border-transparent bg-white px-8 py-6 dark:border-white/[0.2] dark:bg-black '
+      className='boder relative flex justify-center space-x-4 rounded-full border-transparent bg-white px-8 py-6 shadow-input dark:border-white/[0.2] dark:bg-black '
     >
       {children}
     </nav>
