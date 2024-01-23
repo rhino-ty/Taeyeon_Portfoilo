@@ -24,5 +24,13 @@ export const metadata: Metadata = {
 };
 
 export default function HomeWithResume() {
-  return <div className='h-[1000px]'>이력서</div>;
+  return (
+    <main className='flex h-[1000px] w-full'>
+      <section className='mx-auto'>
+        <h1 className='scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl'>
+          제품 중심 문제 해결 X 재미 추구 개발자, 윤태연입니다.
+        </h1>
+      </section>
+    </main>
+  );
 }
