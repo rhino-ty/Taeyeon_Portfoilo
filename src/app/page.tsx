@@ -28,7 +28,7 @@ export default function HomeWithResume() {
     <main className='flex h-[1000px] w-full'>
       <section className='mx-auto'>
         <h1 className='scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl'>
-          제품 중심 문제 해결 X 재미 추구 개발자, 윤태연입니다.
+          제품 중심 문제 공헌 X 재미 추구 개발자, 윤태연입니다.
         </h1>
       </section>
     </main>
