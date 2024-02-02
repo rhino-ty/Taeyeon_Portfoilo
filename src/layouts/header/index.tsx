@@ -16,7 +16,7 @@ export default function HeaderComponent({ className }: { className?: string }) {
 
   const navItems: NavItem[] = [
     {
-      name: 'Resume',
+      name: 'Introduce',
       link: '/',
     },
     {
@@ -32,7 +32,7 @@ export default function HeaderComponent({ className }: { className?: string }) {
       html: (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant='ghost' size='icon'>
+            <Button variant='ghost' size='icon' className='outline-none'>
               <LucideIcon
                 name='Sun'
                 className='h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0'
