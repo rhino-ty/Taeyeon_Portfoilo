@@ -1,3 +1,4 @@
+import ScrollAniDiv from '@/components/scroll-ani-div';
 import { Metadata } from 'next';
 import Image from 'next/image';
 
@@ -30,6 +31,20 @@ export default function HomeWithResume() {
         <h1 className='scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl'>
           제품 중심 문제 공헌 X 재미 추구 개발자, 윤태연입니다.
         </h1>
+        <ScrollAniDiv
+          direction='left'
+          duration={0.5}
+          className='bg-lightblue-200 flex h-screen items-center justify-center'
+        >
+          안녕? 난 왼쪽.
+        </ScrollAniDiv>
+        <ScrollAniDiv
+          direction='right'
+          duration={0.5}
+          className='bg-lightcoral-200 flex h-screen items-center justify-center'
+        >
+          안녕? 난 오른쪽.
+        </ScrollAniDiv>
       </section>
     </main>
   );
