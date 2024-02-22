@@ -4,7 +4,7 @@ import { motion, useAnimation, useInView } from 'framer-motion';
 
 interface ScrollAniDivProps extends React.ComponentProps<typeof motion.div> {
   children: React.ReactNode;
-  direction?: 'left' | 'right';
+  direction?: 'left' | 'right' | 'top' | 'bottom';
   duration?: number;
 }
 
@@ -21,11 +21,13 @@ const ScrollAniDiv: React.FC<ScrollAniDivProps> = ({ children, direction = 'left
 
   const variants = {
     hidden: {
-      x: direction === 'left' ? -70 : 70,
+      x: direction === 'left' ? -70 : direction === 'right' ? 70 : 0,
+      y: direction === 'top' ? -70 : direction === 'bottom' ? 70 : 0,
       opacity: 0,
     },
     visible: {
       x: 0,
+      y: 0,
       opacity: 1,
       transition: { duration },
     },
