@@ -44,11 +44,10 @@ export const FloatingNav = ({ navItems, className }: { navItems: NavItem[]; clas
         )}
       >
         {navItems.map((navItem: NavItem, idx: number) => (
-          <>
+          <Fragment key={`nav-item-${idx}`}>
             {navItem.link ? (
               <Button variant='ghost'>
                 <Link
-                  key={`link=${idx}`}
                   href={navItem.link}
                   className={cn('relative flex items-center')}
                   target={navItem.target ? navItem.target : '_self'}
@@ -58,9 +57,9 @@ export const FloatingNav = ({ navItems, className }: { navItems: NavItem[]; clas
                 </Link>
               </Button>
             ) : (
-              <Fragment key={`fragment-${idx}`}>{navItem.html}</Fragment>
+              navItem.html
             )}
-          </>
+          </Fragment>
         ))}
       </motion.div>
     </AnimatePresence>
