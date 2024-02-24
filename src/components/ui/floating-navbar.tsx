@@ -24,6 +24,13 @@ export const FloatingNav = ({ navItems, className }: { navItems: NavItem[]; clas
       }
     }
   });
+
+  // visible의 초깃값이 useMotionValueEvent의 조건절에 의해 false로 고정돼 페이지에 스크롤이 없다면 nav menu가 보이지 않는 문제 발생.
+  // 그래서 초기 렌더링이 끝난 후 따로 Task Queue에 넣어 마지막에 이벤트를 실행하기 위해 setTimeout 적용.
+  setTimeout(() => {
+    setVisible(true);
+  }, 50);
+
   return (
     <AnimatePresence mode='wait'>
       <motion.div
@@ -66,7 +73,7 @@ export const FloatingNav = ({ navItems, className }: { navItems: NavItem[]; clas
   );
 };
 
-// 그냥 navbar
+/// 그냥 navbar
 const transition = {
   type: 'spring',
   mass: 0.5,
