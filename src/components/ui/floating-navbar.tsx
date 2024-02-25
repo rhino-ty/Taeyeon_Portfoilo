@@ -1,5 +1,5 @@
 'use client';
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 import Link from 'next/link';
 import { cn } from '@/utils/tailwind-merge';
@@ -27,9 +27,13 @@ export const FloatingNav = ({ navItems, className }: { navItems: NavItem[]; clas
 
   // visible의 초깃값이 useMotionValueEvent의 조건절에 의해 false로 고정돼 페이지에 스크롤이 없다면 nav menu가 보이지 않는 문제 발생.
   // 그래서 초기 렌더링이 끝난 후 따로 Task Queue에 넣어 마지막에 이벤트를 실행하기 위해 setTimeout 적용.
-  setTimeout(() => {
-    setVisible(true);
-  }, 50);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setVisible(true);
+    }, 50);
+
+    return () => clearTimeout(timer); // 컴포넌트 언마운트 시 타이머 정리
+  }, []);
 
   return (
     <AnimatePresence mode='wait'>
