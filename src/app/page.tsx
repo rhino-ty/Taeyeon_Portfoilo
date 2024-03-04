@@ -1,3 +1,4 @@
+import Animation from '@/components/lottie-animation';
 import ScrollAniDiv from '@/components/scroll-ani-div';
 import { Metadata } from 'next';
 import Image from 'next/image';
@@ -41,8 +42,11 @@ export default function HomeWithResume() {
 
         {/* 본문 */}
         <article className='flex h-[500px]'>
+          <ScrollAniDiv direction='left' duration={0.5}>
+            <Animation width={500} height={500} />
+          </ScrollAniDiv>
           <div className='flex items-center justify-center'>
-            <ScrollAniDiv direction='left' duration={0.5}>
+            <ScrollAniDiv direction='right' duration={0.5}>
               <p>
                 진로에 한계를 얻고 방황하던 차 아버지께 개발을 접하고 내가 생각한대로 기능 개발하는 것에 매료돼 개발을
                 시작했습니다. 그러면서 과정과 문제 해결에 희열감을 느껴 프로그래밍의 길을 선택 하게 됐습니다.
