@@ -31,14 +31,14 @@ export default function HomeWithResume() {
       <section className='container mx-auto'>
         {/* 제목 및 소제목 */}
         <ScrollAniDiv direction='top'>
-          <h1 className='flex scroll-m-20 items-center justify-center text-center text-3xl font-extrabold tracking-tight md:text-4xl lg:text-5xl'>
+          <h1 className='flex scroll-m-20 items-center justify-center text-center text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl'>
             제품 중심 문제 공헌 X 재미 추구 개발자, 윤태연입니다.
           </h1>
         </ScrollAniDiv>
         <ScrollAniDiv direction='top'>
-          <h2 className='mt-5 flex items-center justify-center text-center text-base font-medium sm:text-lg md:mt-10 md:text-xl lg:text-2xl'>
-            다양한 개발 경험과 함께 제품 중심으로 사고해 문제를 해결해 공헌하고, 그에 대한 재미를 느끼고 싶은 개발자가
-            되고 싶습니다.
+          <h2 className='mt-5 flex flex-col items-center justify-center gap-1 text-center text-lg font-medium sm:text-xl md:mt-10 md:text-2xl lg:text-3xl'>
+            <p>다양한 개발 경험과 함께 제품 중심으로 사고해 문제를 해결해 공헌하고,</p>
+            <p>그에 대한 재미를 느끼고 싶은 개발자가 되고 싶습니다.</p>
           </h2>
         </ScrollAniDiv>
 
@@ -56,7 +56,7 @@ export default function HomeWithResume() {
           <ScrollAniDiv
             direction='right'
             duration={0.5}
-            className='flex w-auto flex-col items-center justify-center gap-4 text-sm sm:w-1/2 md:text-base lg:text-lg'
+            className='flex w-auto flex-col items-center justify-center gap-4 text-sm sm:w-1/2 sm:text-base md:text-lg lg:text-xl'
           >
             <p>
               진로에 한계를 얻고 방황하던 차 아버지께 개발을 접하고 내가 생각한대로 기능 개발하는 것에 매료돼 개발을
