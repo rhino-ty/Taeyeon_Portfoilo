@@ -1,38 +1,31 @@
 'use client';
 import React, { Fragment, useEffect, useState } from 'react';
-import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { cn } from '@/utils/tailwind-merge';
 import { Button } from './button';
 
 export const FloatingNav = ({ navItems, className }: { navItems: NavItem[]; className?: string }) => {
-  const { scrollYProgress } = useScroll();
-
+  // 네비게이션의 가시성을 제어하는 state.
   const [visible, setVisible] = useState(true);
 
-  useMotionValueEvent(scrollYProgress, 'change', (current) => {
-    let direction = current - scrollYProgress.getPrevious();
-
-    if (scrollYProgress.get() <= 0.05) {
-      // 변경된 부분: 조건에 등호 추가
-      setVisible(true); // 변경된 부분: 맨 위로 닿을 때도 true로 설정
-    } else {
-      if (direction < 0) {
-        setVisible(true);
-      } else {
-        setVisible(false);
-      }
-    }
-  });
-
-  // visible의 초깃값이 useMotionValueEvent의 조건절에 의해 false로 고정돼 페이지에 스크롤이 없다면 nav menu가 보이지 않는 문제 발생.
-  // 그래서 초기 렌더링이 끝난 후 따로 Task Queue에 넣어 마지막에 이벤트를 실행하기 위해 setTimeout 적용.
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setVisible(true);
-    }, 50);
+    // 초기 스크롤 위치를 저장, 그 다음 스크롤 이벤트가 발생 시 새로 갱신.
+    let lastScrollY = window.scrollY;
 
-    return () => clearTimeout(timer); // 컴포넌트 언마운트 시 타이머 정리
+    const handleScroll = () => {
+      // direction은 현재 스크롤 위치의 값에서 이전 스크롤 위치의 값을 뺀 결과 => 스크롤 방향 계산.
+      // 즉, 양수면 아래로 스크롤, 음수면 위로 스크롤 하는 것.
+      let direction = window.scrollY - lastScrollY;
+      // 위로 스크롤하거나 맨 위에 있을 때 보이게 state 설정. 나머지는 안보이게.
+      setVisible(direction < 0 || window.scrollY < 10);
+      // 마지막 스크롤 위치를 업데이트
+      lastScrollY = window.scrollY;
+    };
+
+    // 스크롤 이벤트 추가 및 컴포넌트 언마운트 시 제거
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
