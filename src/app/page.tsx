@@ -47,7 +47,7 @@ export default function HomeWithResume() {
           {/* 애니메이션 */}
           <ScrollAniDiv
             direction='left'
-            duration={0.5}
+            duration={0.7}
             className='flex h-[400px] w-auto items-center justify-center sm:h-auto sm:w-1/2'
           >
             <Animation width={500} height={500} />
@@ -55,7 +55,7 @@ export default function HomeWithResume() {
           {/* 소개글 */}
           <ScrollAniDiv
             direction='right'
-            duration={0.5}
+            duration={0.7}
             className='flex w-auto flex-col items-center justify-center gap-4 text-sm sm:w-1/2 sm:text-base md:text-lg lg:text-xl'
           >
             <p>

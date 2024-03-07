@@ -8,7 +8,7 @@ interface ScrollAniDivProps extends React.ComponentProps<typeof motion.div> {
   duration?: number;
 }
 
-const ScrollAniDiv: React.FC<ScrollAniDivProps> = ({ children, direction = 'left', duration = 0.3, ...props }) => {
+const ScrollAniDiv: React.FC<ScrollAniDivProps> = ({ children, direction = 'left', duration = 0.5, ...props }) => {
   const controls = useAnimation();
   const ref = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(ref, { once: true });
