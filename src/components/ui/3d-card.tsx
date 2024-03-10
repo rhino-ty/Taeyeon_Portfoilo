@@ -75,8 +75,12 @@ export const CardContainer = ({
   );
 };
 
-// CardBody는 자식 요소들에게 3D 트랜스폼 스타일을 적용하여 보여주는 컨테이너 역할.
-// 이 컴포넌트는 크기가 정해져 있고, 내부 요소들도 3D 스타일을 유지할 수 있도록 설정.
+/** CardBody는 자식 요소들에게 3D 트랜스폼 스타일을 적용하여 보여주는 컨테이너 역할.
+ * 이 컴포넌트는 크기가 정해져 있고, 내부 요소들도 3D 스타일을 유지할 수 있도록 설정.
+ *
+ * @param {React.ReactNode} children - 이 컴포넌트가 포함할 자식 요소.
+ * @param {string} className - 이 컴포넌트에 적용할 CSS 클래스.
+ */
 export const CardBody = ({ children, className }: { children: React.ReactNode; className?: string }) => {
   return (
     // CardBody 부분에 'preserve-3d' 변환 스타일을 설정해 3D 변환 효과가 일관되게 렌더링되도록 함.
