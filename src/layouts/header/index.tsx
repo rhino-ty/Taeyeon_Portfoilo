@@ -11,21 +11,24 @@ import { Button } from '@/components/ui/button';
 import LucideIcon from '@/components/lucide-icon';
 import { useTheme } from 'next-themes';
 
-export default function HeaderComponent({ className }: { className?: string }) {
+export default function NavHeaderComponent({ className }: { className?: string }) {
   const { setTheme } = useTheme();
 
   const navItems: NavItem[] = [
     {
       name: 'Introduce',
       link: '/',
+      icon: <LucideIcon name='BookUser' className='h-[1.2rem] w-[1.2rem] transition-all' />,
     },
     {
       name: 'Portfolio',
       link: '/portfolio',
+      icon: <LucideIcon name='Image' className='h-[1.2rem] w-[1.2rem] transition-all' />,
     },
     {
       name: 'Notion',
       link: 'https://rhino-ty.notion.site/c56149845fcd49eda4c1c71b17a1d1f7?pvs=4',
+      icon: <LucideIcon name='FileText' className='h-[1.2rem] w-[1.2rem] transition-all' />,
     },
     {
       name: 'Theme',
