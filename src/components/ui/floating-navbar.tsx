@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { cn } from '@/utils/tailwind-merge';
 import { Button } from './button';
+import { Tooltip, TooltipContent, TooltipProvider } from './tooltip';
+import { TooltipTrigger } from '@radix-ui/react-tooltip';
 
 export const FloatingNav = ({ navItems, className }: { navItems: NavItem[]; className?: string }) => {
   // 네비게이션의 가시성을 제어하는 state.
@@ -50,16 +52,27 @@ export const FloatingNav = ({ navItems, className }: { navItems: NavItem[]; clas
         {navItems.map((navItem: NavItem, idx: number) => (
           <Fragment key={`nav-item-${idx}`}>
             {navItem.link ? (
-              <Button variant='ghost'>
-                <Link
-                  href={navItem.link}
-                  className={cn('relative flex items-center')}
-                  target={navItem.target ? navItem.target : '_self'}
-                >
-                  <span className='block sm:hidden'>{navItem.icon}</span>
-                  <span className='hidden text-base sm:block'>{navItem.name}</span>
-                </Link>
-              </Button>
+              <TooltipProvider delayDuration={400}>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button variant='ghost'>
+                      <Link
+                        href={navItem.link}
+                        className={cn('relative flex items-center')}
+                        target={navItem.target ? navItem.target : '_self'}
+                      >
+                        {/* 기본 Navbar */}
+                        <span className='hidden text-base sm:block'>{navItem.name}</span>
+                        {/* 반응형:640px 이내 Navbar, 아이콘 배치 및 툴팁 추가 */}
+                        <span className='block sm:hidden'>{navItem.icon}</span>
+                        <TooltipContent className='block sm:hidden'>
+                          <p>{navItem.name}</p>
+                        </TooltipContent>
+                      </Link>
+                    </Button>
+                  </TooltipTrigger>
+                </Tooltip>
+              </TooltipProvider>
             ) : (
               navItem.html
             )}
