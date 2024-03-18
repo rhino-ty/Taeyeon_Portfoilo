@@ -72,7 +72,7 @@ export default function PortfolioPage() {
               <Badge variant={'secondary'}>MUI</Badge>
               <Badge variant={'secondary'}>Zustand</Badge>
             </CardItem>
-            <div className='mt-7 flex items-center justify-end'>
+            {/* <div className='mt-7 flex items-center justify-end'>
               <CardItem
                 translateZ='20'
                 translateX='20'
@@ -81,7 +81,7 @@ export default function PortfolioPage() {
               >
                 <Button variant={'link'}>자세히 보기 →</Button>
               </CardItem>
-            </div>
+            </div> */}
           </CardBody>
         </CardContainer>
       </ScrollAniDiv>
@@ -127,7 +127,7 @@ export default function PortfolioPage() {
               <Badge variant={'secondary'}>Tailwind CSS</Badge>
               <Badge variant={'secondary'}>TanStack Query</Badge>
             </CardItem>
-            <div className='mt-7 flex items-center justify-end'>
+            {/* <div className='mt-7 flex items-center justify-end'>
               <CardItem
                 translateZ='20'
                 translateX='20'
@@ -136,7 +136,7 @@ export default function PortfolioPage() {
               >
                 <Button variant={'link'}>자세히 보기 →</Button>
               </CardItem>
-            </div>
+            </div> */}
           </CardBody>
         </CardContainer>
       </ScrollAniDiv>
@@ -182,7 +182,7 @@ export default function PortfolioPage() {
               <Badge variant={'secondary'}>Tailwind CSS</Badge>
               <Badge variant={'secondary'}>shadcn/ui</Badge>
             </CardItem>
-            <div className='mt-7 flex items-center justify-end'>
+            {/* <div className='mt-7 flex items-center justify-end'>
               <CardItem
                 translateZ='20'
                 translateX='20'
@@ -191,7 +191,7 @@ export default function PortfolioPage() {
               >
                 <Button variant={'link'}>자세히 보기 →</Button>
               </CardItem>
-            </div>
+            </div> */}
           </CardBody>
         </CardContainer>
       </ScrollAniDiv>
@@ -237,7 +237,7 @@ export default function PortfolioPage() {
               <Badge variant={'secondary'}>Styled Components</Badge>
               <Badge variant={'secondary'}>Recoil</Badge>
             </CardItem>
-            <div className='mt-7 flex items-center justify-end'>
+            {/* <div className='mt-7 flex items-center justify-end'>
               <CardItem
                 translateZ='20'
                 translateX='20'
@@ -246,7 +246,7 @@ export default function PortfolioPage() {
               >
                 <Button variant={'link'}>자세히 보기 →</Button>
               </CardItem>
-            </div>
+            </div> */}
           </CardBody>
         </CardContainer>
       </ScrollAniDiv>
