@@ -1,96 +1,70 @@
-import Link from 'next/link';
+'use client';
+import React from 'react';
+import { FloatingNav } from '@/components/ui/floating-navbar';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { Button } from '@/components/ui/button';
+import LucideIcon from '@/components/lucide-icon';
+import { useTheme } from 'next-themes';
 
-export default function HeaderComponent() {
+export default function NavHeaderComponent({ className }: { className?: string }) {
+  const { setTheme } = useTheme();
+
+  const navItems: NavItem[] = [
+    {
+      name: 'Introduce',
+      link: '/',
+      icon: <LucideIcon name='BookUser' className='h-[1.2rem] w-[1.2rem] transition-all' />,
+    },
+    {
+      name: 'Portfolio',
+      link: '/portfolio',
+      icon: <LucideIcon name='Image' className='h-[1.2rem] w-[1.2rem] transition-all' />,
+    },
+    {
+      name: 'Notion',
+      link: 'https://rhino-ty.notion.site/c56149845fcd49eda4c1c71b17a1d1f7?pvs=4',
+      icon: <LucideIcon name='FileText' className='h-[1.2rem] w-[1.2rem] transition-all' />,
+    },
+    {
+      name: 'Theme',
+      html: (
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant='ghost' size='icon' className='outline-none'>
+              <LucideIcon
+                name='Sun'
+                className='h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0'
+              />
+              <LucideIcon
+                name='Moon'
+                className='absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100'
+              />
+              <span className='sr-only'>Toggle theme</span>
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent>
+            <DropdownMenuItem onClick={() => setTheme('system')} className='text-base'>
+              System
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={() => setTheme('light')} className='text-base'>
+              Light
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={() => setTheme('dark')} className='text-base'>
+              Dark
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      ),
+    },
+  ];
   return (
-    <div className='navbar bg-base-100'>
-      <div className='navbar-start'>
-        {/* <Link href={""} className='btn btn-ghost text-xl'></Link> */}
-      </div>
-      <div className='navbar-end'>
-        <div className='hidden lg:block'>
-          <Link href={''} className='btn btn-ghost rounded-btn'>
-            Portfolio
-          </Link>
-          <div className='dropdown dropdown-end'>
-            <div
-              tabIndex={0}
-              role='button'
-              className='btn btn-ghost rounded-btn '
-            >
-              Theme
-            </div>
-            <ul
-              tabIndex={0}
-              className='menu dropdown-content z-[1] mt-4 w-52 rounded-box bg-base-100 p-2 shadow-lg '
-            >
-              <li>
-                <input
-                  type='radio'
-                  name='theme-dropdown'
-                  className='theme-controller btn btn-ghost btn-sm btn-block justify-start'
-                  aria-label='System'
-                  value='default'
-                />
-              </li>
-              <li>
-                <input
-                  type='radio'
-                  name='theme-dropdown'
-                  className='theme-controller btn btn-ghost btn-sm btn-block justify-start'
-                  aria-label='Light'
-                  value='light'
-                />
-              </li>
-              <li>
-                <input
-                  type='radio'
-                  name='theme-dropdown'
-                  className='theme-controller btn btn-ghost btn-sm btn-block justify-start'
-                  aria-label='Dark'
-                  value='dark'
-                />
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div className='dropdown dropdown-left'>
-          <div tabIndex={0} role='button' className='btn btn-ghost lg:hidden'>
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              fill='none'
-              viewBox='0 0 24 24'
-              className='inline-block h-5 w-5 stroke-current'
-            >
-              <path
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                strokeWidth='2'
-                d='M4 6h16M4 12h16M4 18h16'
-              ></path>
-            </svg>
-          </div>
-          <ul
-            tabIndex={0}
-            className='menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow'
-          >
-            <li>
-              <Link href={''}>Item 1</Link>
-            </li>
-            <li>
-              <Link href={''}>Parent</Link>
-              <ul className='p-2'>
-                <li>
-                  <Link href={''}>Submenu 1</Link>
-                </li>
-                <li>
-                  <Link href={''}>Submenu 2</Link>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <div className='relative  w-full'>
+      <FloatingNav navItems={navItems} />
     </div>
   );
 }
