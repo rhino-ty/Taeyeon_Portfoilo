@@ -24,12 +24,14 @@ import HeaderComponent from '@/layouts/header';
 // pretendard: Next.JS Local Fonts 사용
 // https://nextjs.org/docs/app/building-your-application/optimizing/fonts#local-fonts
 const pretendard = localFont({
-  src: './fonts/PretendardVariable.woff2',
+  src: '../fonts/PretendardVariable.woff2',
   display: 'swap',
+  weight: '45 920',
+  variable: '--font-pretendard',
   fallback: [
+    'Apple SD Gothic Neo',
     '-apple-system',
     'Malgun Gothic',
-    'Apple SD Gothic Neo',
     'Roboto',
     'Apple Color Emoji',
     'Segoe UI Emoji',
@@ -41,7 +43,7 @@ const pretendard = localFont({
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html suppressHydrationWarning>
+    <html suppressHydrationWarning lang='kr' className={`${pretendard.variable}`}>
       <body
         className={pretendard.className}
         // className={notoSansKr.className}
