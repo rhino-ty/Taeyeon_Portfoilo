@@ -7,7 +7,6 @@ import {
   Dialog,
   DialogClose,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -70,14 +69,14 @@ const PortfolioCard: React.FC<PortfolioCardItem> = ({ title, description, imageU
                   <DialogTrigger asChild>
                     <Button variant={'link'}>자세히 보기 →</Button>
                   </DialogTrigger>
-                  <DialogContent className='sm:max-w-md'>
+                  <DialogContent className='h-[80vh] w-11/12 max-w-2xl overflow-scroll sm:w-3/4'>
                     <DialogHeader>
-                      <DialogTitle>{title}</DialogTitle>
-                      <DialogDescription>{modalContent}</DialogDescription>
+                      <DialogTitle className='mb-2 text-xl lg:text-2xl'>{title}</DialogTitle>
+                      {modalContent}
                     </DialogHeader>
-                    <DialogFooter className='sm:justify-start'>
+                    <DialogFooter>
                       <DialogClose asChild>
-                        <Button type='button' variant='secondary'>
+                        <Button type='button' className='w-full text-base font-semibold'>
                           닫기
                         </Button>
                       </DialogClose>
