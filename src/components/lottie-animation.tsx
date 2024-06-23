@@ -7,7 +7,7 @@ import WritingAnimation from '@/../public/lottie/writing-blue-bg.json';
 import Telescope from '@/../public/lottie/telescope.json';
 import StrongIcon from '@/../public/lottie/strong-icon.json';
 
-export default function Animation({ animationType, width, height }: AnimationProps) {
+export default function Animation({ animationType, width, height, ...props }: AnimationProps) {
   const animationData = {
     fun: FunPersnalAnimation,
     writing: WritingAnimation,
@@ -19,7 +19,7 @@ export default function Animation({ animationType, width, height }: AnimationPro
   const animation = animationData[animationType ?? 'default'];
 
   return (
-    <div className='flex items-center justify-center'>
+    <div {...props}>
       <Lottie loop animationData={animation} style={{ width, height }} />
     </div>
   );

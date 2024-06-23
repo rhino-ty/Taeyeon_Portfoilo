@@ -1,4 +1,4 @@
-interface AnimationProps {
+interface AnimationProps extends React.HTMLProps<HTMLDivElement> {
   animationType?: AnimationType;
   width: number;
   height: number;
