@@ -63,9 +63,15 @@ export default function HomeWithResume() {
               시작했습니다. 그러면서 과정과 문제 해결에 희열감을 느껴 프로그래밍의 길을 선택 하게 됐습니다.
             </p>
             <p>
-              <span className='font-bold'>JavaScript(TypeScript)</span>를 주로 사용하며, Next.Js App Router, React.JS,
-              TS, Tailwind CSS, Tanstack-Query, Zustand, Redux Toolkit 등을 사용해 웹 프론트엔드를 개발합니다. 최근엔
-              약사 - 제약회사 간 플랫폼 웹을 프론트엔드 개발 진행했습니다.
+              <code className='text-xs sm:text-xs md:text-sm lg:text-base'>JavaScript</code>(
+              <code className='text-xs sm:text-xs md:text-sm lg:text-base'>TypeScript</code>)를 주로 사용하며,{' '}
+              <code className='text-xs sm:text-xs md:text-sm lg:text-base'>Next.Js App Router</code>,{' '}
+              <code className='text-xs sm:text-xs md:text-sm lg:text-base'>React.JS</code>,{' '}
+              <code className='text-xs sm:text-xs md:text-sm lg:text-base'>Tailwind CSS</code>,{' '}
+              <code className='text-xs sm:text-xs md:text-sm lg:text-base'>Tanstack-Query</code>,{' '}
+              <code className='text-xs sm:text-xs md:text-sm lg:text-base'>Zustand</code>,{' '}
+              <code className='text-xs sm:text-xs md:text-sm lg:text-base'>Redux Toolkit</code> 등을 사용해 웹
+              프론트엔드를 개발합니다. 최근엔 약사 - 제약회사 간 플랫폼 웹을 프론트엔드 개발 진행했습니다.
             </p>
             <p>
               이제는 클라이언트가 원하는 기능을 바로 구현하고, 기존 Frontend Developer를 넘어 제품 중심으로 사고 및 문제

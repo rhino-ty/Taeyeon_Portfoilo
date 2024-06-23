@@ -73,6 +73,9 @@
   body {
     @apply bg-background text-foreground;
   }
+  code {
+    @apply rounded-md bg-gray-200 p-1 font-mono font-semibold text-red-500 dark:bg-gray-800;
+  }
 }
 
 @keyframes pulse {
