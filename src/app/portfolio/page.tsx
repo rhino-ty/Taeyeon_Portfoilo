@@ -49,13 +49,13 @@ export default function PortfolioPage() {
                 퍼블리싱
               </li>
               <li>버튼, 레이아웃, Dialog, Toast 등 컴포넌트화 및 재사용이 용이하도록 구축</li>
-              <li>서버 상태 관리를 위한 Tanstack Query 도입</li>
               <li>
-                회원가입, 로그인, 로그아웃, 유저 정보 관리,{' '}
-                <code className='rounded-md bg-gray-200 p-1 font-mono text-xs font-semibold text-red-500 dark:bg-gray-800'>
-                  fetch에 interceptor를 사용한 토큰 갱신 및 재요청
-                </code>{' '}
-                등 <span className='font-bold'>Auth에 관련된 모든 프론트 기능 개발</span>
+                서버 상태 관리를 위한 <code className='text-xs'>Tanstack Query</code> 도입
+              </li>
+              <li>
+                회원가입, 로그인, 로그아웃, 유저 정보 관리, <code className='text-xs'>fetch</code>에{' '}
+                <code className='text-xs'>interceptor</code> 개념을 채용해 토큰 갱신 및 재요청 등 Auth에 관련된 모든
+                프론트 기능 개발
               </li>
               <li>UX를 고려해 클릭, 마우스 오버 등의 애니메이션 도입</li>
               <li>
@@ -68,7 +68,10 @@ export default function PortfolioPage() {
                   메모이제이션 실사용
                 </a>
               </li>
-              <li>상품 판매 페이지에 `useInfiniteQuery` 를 마이그레이션해 데이터 캐싱 및 UX 최적화</li>
+              <li>
+                상품 판매 페이지에 <code className='text-xs'>useInfiniteQuery</code> 를 마이그레이션해 데이터 캐싱 및 UX
+                최적화
+              </li>
             </ul>
           </p>
           <div className='flex flex-col gap-3'>
@@ -108,7 +111,7 @@ export default function PortfolioPage() {
             </ScrollAniDiv>
             <ScrollAniDiv direction='top-to-bottom'>
               <h3 className='mb-1 text-lg font-medium'>
-                3. 약사: 주문 내역 - 날짜, 카테고리 분류(Query 사용) 및 메모 가능
+                3. 약사: 주문 내역 - 날짜, 카테고리 분류(URL Query 사용) 및 메모 가능
               </h3>
               <Image
                 src={'https://github.com/rhino-ty/my-image-assets/assets/94962427/c1fccc9f-e85e-4ef5-8b5c-b31ebed72cd6'}
